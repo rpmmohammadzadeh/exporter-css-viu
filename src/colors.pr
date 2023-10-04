@@ -12,6 +12,8 @@ and their value rendered using `rendered-color` blueprint
 {[/]}
 }
 *}
+import { sortTokens } from "js/helpers.js"; // Import the external JavaScript file
+
 :root {
   {[ let brand = ds.currentBrand() /]}
   {[ let tokens = ds.tokensByType("Color", brand.id) /]}
