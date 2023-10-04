@@ -23,10 +23,6 @@
         {
             "invoke": "index-file.pr",
             "write_to": "index.css"
-        },      
-        {
-            "invoke": "assets.pr",
-            "write_to": "assets.css"
         }
     ]
 }
