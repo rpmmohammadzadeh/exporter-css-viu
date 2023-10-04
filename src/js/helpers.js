@@ -107,7 +107,6 @@ Pulsar.registerPayload("behavior", {
   typographyTokenPrefix: "typography",
   radiusTokenPrefix: "radius",
   textTokenPrefix: "text",
-  assetTokenPrefix: "asset",
 });
 
 Pulsar.registerFunction("rgbaToHsla", function (r, g, b, a = 1) {
