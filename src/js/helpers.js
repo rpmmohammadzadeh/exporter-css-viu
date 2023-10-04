@@ -48,12 +48,28 @@ Pulsar.registerFunction(
 );
 
 Pulsar.registerFunction(
-  "sortTokens",
-function sortTokens(tokens) {
-  // Sort the tokens alphabetically
-  tokens.sort((a, b) => a.name.localeCompare(b.name));
-  return tokens;
+  "sort",
+function sort(array, compareFunction) {
+  // If a compareFunction is not provided, use the default compare function.
+  if (compareFunction === undefined) {
+    compareFunction = (a, b) => a - b;
   }
+  // Iterate over the array and compare adjacent elements.
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      // If the two elements are in the wrong order, swap them.
+      if (compareFunction(array[i], array[j]) > 0) {
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
+
+  // Return the sorted array.
+  return array;
+}
+  
 );
 
 
