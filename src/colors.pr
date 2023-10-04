@@ -12,13 +12,11 @@ and their value rendered using `rendered-color` blueprint
 {[/]}
 }
 *}
-import { sortTokens } from "js/helpers.js";
-
 :root {
-  {[ let brand = ds.currentBrand() /]}
-  {[ let tokens = ds.tokensByType("Color", brand.id) /]}
-  {[ let sortedTokens = sortTokens(tokens) /]}
-  {[ for token in sortedTokens ]}
-    {[ inject "rendered-token-var" context token /]}
-  {[/]}
+{[ let brand = ds.currentBrand() /]}
+{[ let tokens = ds.tokensByType("Color", brand.id) /]}
+{[ let sortedTokens = sortTokens(tokens) /]}
+{[ for token in sortedTokens ]}
+{[ inject "rendered-token-var" context token /]}
+{[/]}
 }
