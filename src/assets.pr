@@ -1,0 +1,5 @@
+:root {
+{[ let brand = ds.currentBrand() /]}
+{[ for token in ds.tokensByType("Assets", brand.id) ]}
+{[ inject "rendered-token-var" context token /]}{[/]}
+}
