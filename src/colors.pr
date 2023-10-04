@@ -6,17 +6,21 @@ and their value rendered using `rendered-color` blueprint
 
 :root {
 {[ let brand = ds.currentBrand() /]}
-{[ for token in ds.tokensByType("Color", brand.id) ]}
-{[ let sortedTokens = sortTokens(tokens) /]} 
-{[ inject "rendered-token-var" context token /]}
-{[/]}
-}
-*}
-:root {
-{[ let brand = ds.currentBrand() /]}
 {[ let tokens = ds.tokensByType("Color", brand.id) /]}
 {[ let sortedTokens = sortTokens(tokens) /]}
 {[ for token in sortedTokens ]}
 {[ inject "rendered-token-var" context token /]}
 {[/]}
+}
+*}
+:root {
+  {[ let brand = ds.currentBrand() /]}
+  {[ let sortedTokens = [] /]}
+  {[ for token in ds.tokensByType("Color", brand.id) ]}
+    {[ sortedTokens.sortTokens(tokens) /]}
+  {[/]}
+  {[ sortedTokens.sort() /]}
+  {[ for token in sortedTokens ]}
+    {[ inject "rendered-token-var" context token /]}
+  {[/]}
 }
