@@ -19,7 +19,7 @@ and their value rendered using `rendered-color` blueprint
   {[ let renderedTokens = [] /]}
 
   {[ for token in tokens ]}
-    {[ renderedTokens[renderedTokens.length] = inject("rendered-token-var", context token) /]}
+    {[ renderedTokens[renderedTokens.length] = inject("rendered-token-var" context token) /]}
   {[/]}
 
   {[ renderedTokens = renderedTokens.sort() /]}
