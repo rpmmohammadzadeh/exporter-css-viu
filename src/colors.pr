@@ -13,7 +13,11 @@ and their value rendered using `rendered-color` blueprint
 
 :root {
   {[ let brand = ds.currentBrand() /]}
-  {[ let sortedTokens = ds.tokensByType("Color", brand.id).sort() /]}
+  {[ let sortedTokens = [] /]}
+  {[ for token in ds.tokensByType("Color", brand.id) ]}
+    {[ sortedTokens.push(token) /]}
+  {[/]}
+  {[ sortedTokens.sort() /]}
   {[ for token in sortedTokens ]}
     {[ inject "rendered-token-var" context token /]}
   {[/]}
