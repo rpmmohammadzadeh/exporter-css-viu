@@ -10,7 +10,6 @@ and their value rendered using `rendered-color` blueprint
 {[/]}
 }
 *}
-
 :root {
   {[ let brand = ds.currentBrand() /]}
   {[ let sortedTokens = [] /]}
