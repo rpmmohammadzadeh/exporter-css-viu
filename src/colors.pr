@@ -17,7 +17,7 @@ and their value rendered using `rendered-color` blueprint
   {[ let brand = ds.currentBrand() /]}
   {[ let sortedTokens = [] /]}
   {[ for token in ds.tokensByType("Color", brand.id) ]}
-    {[ sortedTokens.sortTokens(tokens) /]}
+    {[ let sortedTokens = sortTokens(tokens) /]}
   {[/]}
   {[ sortedTokens.sort() /]}
   {[ for token in sortedTokens ]}
