@@ -25,6 +25,6 @@ and their value rendered using `rendered-color` blueprint
   {[ renderedTokens = renderedTokens.sort() /]}
 
   {[ for token in renderedTokens ]}
-  {[ inject "rendered-token-var" context token /]}
+  {[ inject renderedTokens /]}
   {[/]}
 }
