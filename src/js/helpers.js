@@ -47,6 +47,13 @@ Pulsar.registerFunction(
   }
 );
 
+function sortTokens(tokens) {
+  // Sort the tokens alphabetically
+  tokens.sort((a, b) => a.name.localeCompare(b.name));
+  return tokens;
+}
+
+
 function findAliases(token, allTokens) {
   let aliases = allTokens.filter(
     (t) => t.value.referencedToken && t.value.referencedToken.id === token.id
