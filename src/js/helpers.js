@@ -47,11 +47,14 @@ Pulsar.registerFunction(
   }
 );
 
+Pulsar.registerFunction(
+  "sortTokens",
 function sortTokens(tokens) {
   // Sort the tokens alphabetically
   tokens.sort((a, b) => a.name.localeCompare(b.name));
   return tokens;
-}
+  }
+);
 
 
 function findAliases(token, allTokens) {
